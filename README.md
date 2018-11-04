@@ -1,4 +1,5 @@
-[git command]
+## git command memo
+```
 $ git init
 $ git add -A
 $ git commit -m "Initialize repository"
@@ -6,12 +7,14 @@ $ git remote -v
 $ git status
 $ git remote add origin git@github.com:hebisu/rails_tutorial_app.git
 $ git push origin master
-
-[bundle command]
+```
+## bundle command memo
+```
 $ bundle update
 $ bundle install --without production
-
-[heroku command]
+```
+## heroku command memo
+```
 $ source <(curl -sL https://cdn.learnenough.com/heroku_install)
 $ heroku login
 $ heroku keys:add
@@ -20,7 +23,8 @@ $ git push heroku master
 $ heroku restart [app]
 $ heroku destroy [app]
 $ heroku rename [app]
-----------------------------------------------
+```
+
 # Ruby on Rails チュートリアルのサンプルアプリケーション
 
 これは、次の教材で作られたサンプルアプリケーションです。   
