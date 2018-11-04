@@ -1,3 +1,15 @@
+## rails command memo
+```
+$ rails generate controller StaticPages home help
+$ rails destroy  controller StaticPages home help
+
+$ rails generate model User name:string email:string
+$ rails destroy model User
+
+$ rails db:migrate
+$ rails db:rollback
+$ rails db:migrate VERSION=0
+```
 ## git command memo
 ```
 $ git init
