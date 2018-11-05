@@ -19,6 +19,10 @@ $ git remote -v
 $ git status
 $ git remote add origin git@github.com:hebisu/rails_tutorial_app.git
 $ git push origin master
+
+$ git checkout master
+$ git merge static-pages
+$ git push
 ```
 ## git branch command memo
 [Gitブランチ関連コマンド](https://qiita.com/ayakix/items/55dc4a324a49ff200c2d)
