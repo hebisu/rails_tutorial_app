@@ -43,7 +43,14 @@ $ heroku restart [app]
 $ heroku destroy [app]
 $ heroku rename [app]
 ```
-
+## ps command memo
+```
+$ ps aux
+$ ps aux | grep spring
+$ kill -15 12241
+$ spring stop
+$ pkill -15 -f spring
+```
 # Ruby on Rails チュートリアルのサンプルアプリケーション
 
 これは、次の教材で作られたサンプルアプリケーションです。   
