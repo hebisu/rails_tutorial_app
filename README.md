@@ -42,6 +42,8 @@ $ git push heroku master
 $ heroku restart [app]
 $ heroku destroy [app]
 $ heroku rename [app]
+
+URL: https://xxxxx-xxxxx-xxxxx.herokuapp.com/
 ```
 ## ps command memo
 ```
