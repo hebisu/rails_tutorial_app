@@ -4,6 +4,11 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
+
+  def setup
+    @user       = users(:michael)
+    @other_user = users(:archer)
+  end
   
   test "layout links" do
     get root_path
@@ -13,8 +18,19 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", contact_path
     get contact_path
-    assert_select "title", full_title("Contact")  
+    assert_select "title", full_title("Contact")
     get signup_path
-    assert_select "title", full_title("Sign up")  
+    assert_select "title", full_title("Sign up")
+    end  
+    
+  #Add for quiz 10.3.1.1
+  test "layout links with login" do    
+    log_in_as(@other_user)
+    get root_path
+    assert_template 'static_pages/home'    
+    assert_select "a[href=?]", users_path
+    assert_select "a[href=?]", user_path(@other_user)
+    assert_select "a[href=?]", edit_user_path(@other_user)
+    assert_select "a[href=?]", logout_path
   end  
 end
