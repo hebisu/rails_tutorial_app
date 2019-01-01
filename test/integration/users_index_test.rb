@@ -6,6 +6,7 @@ require 'test_helper'
   def setup
     @admin     = users(:michael)
     @non_admin = users(:archer)
+    @non_activate = users(:notactivate)    
   end
 
   test "index as admin including pagination and delete links" do
@@ -15,8 +16,10 @@ require 'test_helper'
     assert_select 'div.pagination'
     first_page_of_users = User.paginate(page: 1)
     first_page_of_users.each do |user|
-      assert_select 'a[href=?]', user_path(user), text: user.name
-      unless user == @admin
+      unless user == @non_activate
+        assert_select 'a[href=?]', user_path(user), text: user.name
+      end
+      unless user == @admin || user == @non_activate
         assert_select 'a[href=?]', user_path(user), text: 'delete'
       end
     end
@@ -30,6 +33,15 @@ require 'test_helper'
     get users_path
     assert_select 'a', text: 'delete', count: 0
   end
+  
+  test "index as non-activated user" do
+    log_in_as(@non_activate)
+    assert_not @non_activate.activated?
+    get users_path
+    assert_select "a[href=?]", user_path(@non_activate), count: 0
+    get user_path(@non_activate)
+    assert_redirected_to root_url
+  end  
   
 end
 
