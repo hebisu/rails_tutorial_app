@@ -19,7 +19,7 @@ require 'test_helper'
       unless user == @non_activate
         assert_select 'a[href=?]', user_path(user), text: user.name
       end
-      unless user == @admin || user == @non_activate
+      unless user == @admin or user == @non_activate
         assert_select 'a[href=?]', user_path(user), text: 'delete'
       end
     end
