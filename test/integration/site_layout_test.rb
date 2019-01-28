@@ -33,4 +33,15 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", edit_user_path(@other_user)
     assert_select "a[href=?]", logout_path
   end  
+  
+  test "Home statistic" do
+    log_in_as(@user)
+    assert is_logged_in?
+    get root_path
+    assert_select "a[href=?]", following_user_path(@user)
+    assert_select "a[href=?]", followers_user_path(@user)
+    assert_match @user.following.count.to_s, response.body
+    assert_match @user.followers.count.to_s, response.body
+  end
+  
 end
