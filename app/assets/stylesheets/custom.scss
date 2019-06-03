@@ -13,7 +13,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 body {
   padding-top: 60px;
-  background-image: url(top.jpg);
+  background-image: url(top1.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,12 +54,12 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.0em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+//  color: $gray-light;
 }
 
 p {
@@ -83,6 +83,10 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.text-white{
+  color: #FFFFFF;
 }
 /*
 #logo:hover {
